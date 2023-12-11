@@ -12,7 +12,7 @@ from scapy.base_classes import Net
 #python3 -m http.server 6673
 
 OurNetwork = 'X.X.X.X'
-AttackerNet = 'X.X.X.X4
+AttackerNet = 'X.X.X.X'
 
 dhcp_server = DHCP_am(iface='eth1',
                       pool=Net(OurNetwork),
