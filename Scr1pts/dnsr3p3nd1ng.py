@@ -3,17 +3,14 @@
 from scapy.all import *
 	
 import time
-# Set the interface to listen and respond on
 net_interface = "eth1"	
 print "[+] Listening"
 IP_test = "10.10.10.67"
 first = 0
-# Berkeley Packet Filter for sniffing specific DNS packet only
 packet_filter = " and ".join([
     "udp dst port 53",          # Filter UDP port 53
     "udp[10] & 0x80 = 0"       # DNS queries only
     ])
-# Function that replies to DNS query
 	
 while True:
   if first == 0:
