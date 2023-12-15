@@ -1,18 +1,6 @@
 #!/usr/bin/env python
 from scapy.all import *
 
-"""
-HOW TO :
-
-- start ICMP tcpdump on victim (tcpdump icmp)
-- start a ping from source machine to victim
-- start icmp-responder.py on hacker (no activity for now)
-- start this script on hacker
-- Show ICMP logs on hacker
-- Show missing ICMP logs on victim
-- PWNED !!!
-"""
-
 def get_mac_from_ip(ip):
     # broadcast ARP opcode 1 to retrieve MAC address
     arp_packet = Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(op=1, pdst=ip)
