@@ -11,7 +11,7 @@ class S(BaseHTTPRequestHandler):
 
     def do_GET(self):
         self._set_headers()
-        response_data_json = '{"token":"toto","id":"nofalse","balance":1000}'
+        response_data_json = '{"XX":"XX"}'
         response_data = json.loads(response_data_json)
         tab = [response_data]
         self.wfile.write(json.dumps(tab).encode('utf-8'))
@@ -24,8 +24,8 @@ class S(BaseHTTPRequestHandler):
         post_data = self.rfile.read(content_length)
         self._set_headers()
         print(post_data.decode('utf-8'))
-        # Respond with a JSON containing "credential_id" equal to true 
-        response_data = '{"token":"toto","id":"nofalse","balance":1000, "mesage": "POST request received", "data_received": post_data.decode("utf-8")}'
+        # Respond with a JSON containing "XX" equal to "XX"
+        response_data = '{"XX":"XX", "mesage": "POST request received", "data_received": post_data.decode("utf-8")}'
         response_data = json.loads(response_data_json)
         tab = [response_data]
         self.wfile.write(json.dumps(tab).encode('utf-8'))
